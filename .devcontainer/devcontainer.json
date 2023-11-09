@@ -1,0 +1,50 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+{
+    "name": "DotnextSerialization",
+    // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+    "dockerComposeFile": "../Docker/Development/docker-compose.yml",
+    "service": "service",
+    "workspaceFolder": "/app",
+    // Features to add to the dev container. More info: https://containers.dev/features.
+    // "features": {},
+    // Use 'forwardPorts' to make a list of ports inside the container available locally.
+    // "forwardPorts": [
+    //     43000,
+    //     44000
+    // ],
+    // Use 'postCreateCommand' to run commands after the container is created.
+    // Configure tool-specific properties.
+    "customizations": {
+        // Configure properties specific to VS Code.
+        "vscode": {
+            // Add the IDs of extensions you want installed when the container is created.
+            "extensions": [
+							"ms-toolsai.jupyter",
+							"ms-dotnettools.vscode-dotnet-runtime",
+							"ms-dotnettools.csharp",
+							"aaron-bond.better-comments",
+							"eamodio.gitlens",
+							"visualstudioexptteam.vscodeintellicode",
+							"zxh404.vscode-proto3",
+							"editorconfig.editorconfig",
+							"streetsidesoftware.code-spell-checker",
+							"kreativ-software.csharpextensions",
+							"jeremyfunk.hidefiles",
+							"formulahendry.dotnet-test-explorer",
+							"ms-vscode.makefile-tools",
+							"ms-vscode-remote.remote-containers",
+							"nuke.support",
+							"ms-dotnettools.csdevkit",
+							"DotJoshJohnson.xml",
+							"aliasadidev.nugetpackagemanagergui",
+							"ms-azuretools.vscode-docker",
+							"ms-dotnettools.vscode-dotnet-pack",
+							"GitHub.copilot",
+							"GitHub.vscode-pull-request-github",
+							"bierner.markdown-preview-github-styles"
+						]
+        }
+    }
+    // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+    // "remoteUser": "root"
+}

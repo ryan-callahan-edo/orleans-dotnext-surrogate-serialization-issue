@@ -1,0 +1,41 @@
+# https://github.com/grafana/intro-to-mltp
+version: "3.9"
+
+services:
+  service:
+    container_name: service
+    build:
+      context: ../../
+      dockerfile: ./Docker/Development/Development.Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+    depends_on:
+      redis:
+        condition: service_healthy
+    ports:
+      - "5299:5299"
+    volumes:
+      - ../../:/app:cached
+    command: sleep infinity
+    networks:
+      - orleans
+
+  redis:
+    restart: unless-stopped
+    container_name: redis
+    image: redis:7-alpine
+    healthcheck:
+      test: [ "CMD", "redis-cli", "ping" ]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 5s
+    ports:
+      - '6379:6379'
+    volumes:
+      - ../../.redis:/data:delegated
+    networks:
+      - orleans
+
+networks:
+  orleans:
